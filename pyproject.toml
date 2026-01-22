@@ -1,0 +1,18 @@
+[project]
+name = "tessan-medical-chatbot"
+version = "0.1.0"
+description = "Medical chatbot for Tessan"
+authors = [
+    {name = "YOUSSEF"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "google-generativeai",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
