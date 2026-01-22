@@ -79,10 +79,6 @@ def main():
     system_instruction = construct_system_instruction(template_data)
 
     # Initialize Chat Session
-    # Using 'gemini-1.5-flash' (standard). User asked for 2.5 before but 1.5 is safer default if 2.5 errors.
-    # However, to avoid "obsolete" complaints, I will leave it as 1.5 or try 'gemini-2.0-flash-exp' if available.
-    # Let's stick to 'gemini-1.5-flash' for now as it's the stable one, unless user changes it again.
-    # Reverting to 1.5 because 2.5 is not a valid public model ID usually.
     chat = client.chats.create(
         model="gemini-2.5-flash",
         config=genai.types.GenerateContentConfig(
