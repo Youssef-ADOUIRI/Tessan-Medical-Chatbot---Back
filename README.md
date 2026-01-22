@@ -58,7 +58,3 @@ To add new dependencies:
 ```bash
 poetry add <package_name>
 ```
-
-## License
-
-[Add License Here]
