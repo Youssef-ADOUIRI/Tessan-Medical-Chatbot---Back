@@ -49,8 +49,11 @@ The bot will launch in the terminal. Type your health-related questions to inter
 ## Architecture
 
 - **`chatbot.py`**: Main application script. Handles user input, API communication, and conversation loop.
-- **`chatbot_system_prompt.txt`**: Contains the strict system instructions (Role, Tone, Safety Rules). (Located in artifacts folder or project root depending on your setup).
+- **`system_prompt_template.yaml`**: Contains the strict system instructions (Role, Tone, Safety Rules) and Few-Shot examples.
 - **`pyproject.toml`**: Dependency configuration.
+
+### System Flow
+The architecture relies on a **Secure Orchestrator** that filters each user input via an **Intent Detector** to classify the request (Symptom, Admin, Emergency). If a symptom is identified, the request first passes through a **Medical Security Module** (based on strict rules and "Red Flags" keywords) before querying the LLM. The generated response is then analyzed by the **Suggestion Module**, which conditionally injects the teleconsultation proposal (prompt rule). Finally, a **Monitoring & Logging** system audits interactions in real-time to track response refusals and detect potential hallucinations, ensuring continuous medical compliance.
 
 ## Development
 
